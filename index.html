@@ -10,7 +10,7 @@
     })
     .then((data)=>{
        if(ipd == data.ip){
-           fetch('/vk.txt')
+           fetch('/vk/vk.txt')
            .then((r)=>{
                return r.text()
            })
